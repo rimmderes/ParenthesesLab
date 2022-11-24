@@ -4,27 +4,42 @@ public class ParenthesesChecker {
 
     private ParenthesesChecker checker;
 
+        // make a method called checkParentheses()
+        // takes in a String
+        // returns a boolean
+
+        // return if the string contains "correct" pairs of parentheses
+        // return false if not!
+
+        // situations for return:
+        // more opening or closing brackets of particular type (), <>, {}, []
+        // closing bracket at start, opening one at end
+        // opening bracket followed by two closing bracket
+
+        // stack
+
     boolean checkParentheses(String testString) {
         Stack<Character> characterStack = new Stack<>();
         for (int i = 0; i < testString.length(); i++) {
             char x = testString.charAt(i);
             if (x == '(') {
+                //        if (x == '(' || x == '[' || x == '{') {
                 characterStack.push(x);
                 if (characterStack.isEmpty()) {
-                    return false;
-            }
-//            char check;
-//            switch (x) {
-//                case ')':
-//                    check = characterStack.pop();
 
-            if (characterStack.isEmpty()) {
-                return true;
-            }
-         }} return false; }}
-//        if (x == '(' || x == '[' || x == '{') {
-//            characterStack.push(x);
-//        }
+                } else if ( !characterStack.empty() && (
+                    testString.charAt(i) == ')'))
+
+                characterStack.pop();
+
+             else {
+                    characterStack.push(testString.charAt(i));
+
+                    if (characterStack.isEmpty()) {
+                        return true;
+                    }
+
+                } } } return false; }}
 
 
 //           for (char x :
@@ -65,31 +80,7 @@ public class ParenthesesChecker {
 //        }
 //        return (stack.isEmpty());
 //    }}
-//               } else {
-//                   while(normalBraceCount>0) {
-//                       Character chartoRemove = characterStack.pop();
-//                       boolean isNormalLeftBigger =
-//                   }
-//               }
 //
-//
-//           }
-
-
-
-        // make a method called checkParentheses()
-        // takes in a String
-        // returns a boolean
-
-        // return if the string contains "correct" pairs of parentheses
-        // return false if not!
-
-        // situations for return:
-        // more opening or closing brackets of particular type (), <>, {}, []
-        // closing bracket at start, opening one at end
-        // opening bracket followed by two closing bracket
-
-        // stack
 
 
 
